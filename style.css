@@ -37,3 +37,17 @@
   font-size: 18px;
   color: grey;
 }
+
+.calculator{
+  float: left;
+  width: 75px;
+  text-align: center;
+  align-self:  center;
+  border-bottom: 2px solid grey;
+}
+
+.result {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
