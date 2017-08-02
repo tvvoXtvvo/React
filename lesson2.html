@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <title>lesson2</title>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+            <link rel="stylesheet" type="text/css" href="style.css">
+            </head>
+            <body>
+                <div id='content'></div>
+
+                <script type="text/babel">
+
+                    var HelloWorld = React.createClass({
+                        getInitialState: function() {
+                            return {
+                                word: 'stranger'
+                            };
+                        },
+
+                        handleNameChange(event) {
+                            this.setState({
+                                word: event.target.value
+                            });
+                        },
+
+                        render: function() {
+                            return (
+                                <div className="contacts">
+                                    <input type="text" placeholder="Search..." className="search-field" onChange={this.handleNameChange} />
+                                    <div className="contact-info">
+                                        <div className="contact-number"> Hello, {this.state.word ? this.state.word : "stranger"}! </div>
+                                    </div>
+                                </div>
+                            );
+                        }
+                    });
+                    ReactDOM.render(
+                    <HelloWorld />,
+                    document.getElementById('content')
+                    );
+                </script>
+            </body>
+        </html>
